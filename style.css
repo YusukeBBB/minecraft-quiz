@@ -139,9 +139,9 @@ button:active {
 
 /* レスポンシブ対応 */
 @media (max-width: 600px) {
-    body {
-        padding: 20px;
-        box-sizing: border-box; /* paddingを含めてwidthを100%にする */
+    .screen {
+        padding: 0 20px; /* 左右に余白を追加 */
+        box-sizing: border-box; /* paddingを含めてwidthを100%に保つ */
     }
 
     h1 {
