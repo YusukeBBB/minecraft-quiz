@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マイクラクイズ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="title-screen" class="screen active">
+        <h1>マイクラクイズ</h1>
+        <button id="start-button">はじめる</button>
+    </div>
+
+    <div id="quiz-screen" class="screen">
+        <p id="question"></p>
+        <div id="choices" class="choices-container">
+            <!-- 選択肢ボタンはここに動的に追加されます -->
+        </div>
+        <p id="score">いまのポイント：0</p>
+    </div>
+
+    <div id="feedback-screen" class="screen">
+        <p id="feedback-result"></p>
+        <p id="feedback-text"></p>
+    </div>
+
+    <div id="result-screen" class="screen">
+        <p id="final-score"></p>
+        <button id="restart-button">もういちど！</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

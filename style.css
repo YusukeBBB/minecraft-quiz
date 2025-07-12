@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+/* アニメーション定義 */
+@keyframes pop-in {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    80% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* 全体設定 */
+body {
+    font-family: 'DotGothic16', sans-serif; /* マイクラ風フォント */
+    background-color: #3a7a2a; /* 少し暗めの緑 */
+    background-image: url('https://www.transparenttextures.com/patterns/grass-and-dirt.png');
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-shadow: 3px 3px 0 #333;
+    overflow: hidden; /* スクロールバーを隠す */
+}
+
+.screen {
+    display: flex; /* display:noneから変更 */
+    position: absolute; /* 位置を固定 */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    opacity: 0; /* 最初は透明 */
+    visibility: hidden; /* 見えないように */
+    transition: opacity 0.5s ease-in-out, visibility 0.5s; /* フェードアニメーション */
+}
+
+.screen.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* タイトル画面 */
+h1 {
+    font-size: 4.5rem; /* 少し大きく */
+    margin-bottom: 40px;
+    line-height: 1.2;
+}
+
+button {
+    font-family: 'DotGothic16', sans-serif; /* ボタンにもフォント適用 */
+    font-size: 2rem;
+    padding: 15px 40px;
+    border: 5px solid #595959;
+    border-radius: 0; /* 四角くする */
+    background-color: #a0a0a0; /* 石ブロック風 */
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 6px #595959;
+    transition: all 0.1s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.05); /* ホバーで少し大きく */
+}
+
+button:active {
+    transform: translateY(6px) scale(1.05);
+    box-shadow: none;
+}
+
+/* クイズ画面 */
+#question {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border: 4px solid #595959;
+}
+
+.choices-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+}
+
+.choices-container button {
+    width: 100%;
+    font-size: 1.8rem;
+}
+
+#score {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0,0,0,0.7);
+    padding: 10px 20px;
+    border: 3px solid #595959;
+}
+
+/* フィードバック画面 */
+#feedback-result {
+    font-size: 12rem; /* もっと大きく */
+    font-weight: bold;
+    animation: pop-in 0.5s ease-out forwards; /* ポップインアニメーション */
+}
+
+#feedback-text {
+    font-size: 4rem;
+}
+
+#feedback-result.correct {
+    color: #ffdd00; /* 明るい黄色 */
+}
+
+#feedback-result.incorrect {
+    color: #4d4dff; /* 明るい青 */
+}
+
+/* リザルト画面 */
+#final-score {
+    font-size: 3rem;
+    margin-bottom: 40px;
+}
