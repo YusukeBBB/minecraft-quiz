@@ -136,3 +136,37 @@ button:active {
     font-size: 3rem;
     margin-bottom: 40px;
 }
+
+/* レスポンシブ対応 */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    #question {
+        font-size: 1.8rem;
+    }
+
+    .choices-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    button,
+    .choices-container button {
+        font-size: 1.5rem;
+        padding: 15px 20px;
+    }
+
+    #feedback-result {
+        font-size: 8rem;
+    }
+
+    #feedback-text {
+        font-size: 2.5rem;
+    }
+
+    #final-score {
+        font-size: 2.5rem;
+    }
+}
