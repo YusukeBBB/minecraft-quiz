@@ -139,6 +139,11 @@ button:active {
 
 /* レスポンシブ対応 */
 @media (max-width: 600px) {
+    body {
+        padding: 20px;
+        box-sizing: border-box; /* paddingを含めてwidthを100%にする */
+    }
+
     h1 {
         font-size: 3rem;
     }
